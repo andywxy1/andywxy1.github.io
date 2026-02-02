@@ -353,7 +353,7 @@ section {
 }
 
 .education-card {
-    background: var(--color-white);
+    background: rgba(250, 250, 250, 0.95);
     border: 1px solid var(--color-border);
     padding: 2.5rem;
     transition: var(--transition-smooth);
@@ -364,24 +364,34 @@ section {
 .education-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-size: cover;
+    top: -20px;
+    right: -20px;
+    bottom: -20px;
+    left: -20px;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0.4;
+    opacity: 0.3;
     transition: var(--transition-smooth);
     pointer-events: none;
+    z-index: 0;
+    filter: none;
+}
+
+.education-card:first-child {
+    background: linear-gradient(135deg, rgba(1, 31, 91, 0.03) 0%, rgba(255,255,255,0.95) 100%);
 }
 
 .education-card:first-child::before {
-    background-image: url('images/upenn_logo.png');
+    background-image: url('images/upenn_logo.png?v=3');
+}
+
+.education-card:last-child {
+    background: linear-gradient(135deg, rgba(75, 46, 131, 0.03) 0%, rgba(255,255,255,0.95) 100%);
 }
 
 .education-card:last-child::before {
-    background-image: url('images/uw_logo.svg');
+    background-image: url('images/uw_logo.svg?v=3');
 }
 
 .education-card:hover {
@@ -391,7 +401,8 @@ section {
 }
 
 .education-card:hover::before {
-    opacity: 0.55;
+    opacity: 0.5;
+    transform: scale(1.05);
 }
 
 .card-header {
