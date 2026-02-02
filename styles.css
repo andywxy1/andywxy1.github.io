@@ -368,10 +368,10 @@ section {
     right: 0;
     bottom: 0;
     left: 0;
-    background-size: 60%;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center right;
-    opacity: 0.25;
+    background-position: center;
+    opacity: 0.4;
     transition: var(--transition-smooth);
     pointer-events: none;
 }
@@ -391,7 +391,7 @@ section {
 }
 
 .education-card:hover::before {
-    opacity: 0.4;
+    opacity: 0.55;
 }
 
 .card-header {
@@ -401,6 +401,11 @@ section {
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--color-border);
+    position: relative;
+    z-index: 1;
+}
+
+.degree-info {
     position: relative;
     z-index: 1;
 }
@@ -430,6 +435,8 @@ section {
 
 .date-location {
     text-align: right;
+    position: relative;
+    z-index: 1;
 }
 
 .date {
