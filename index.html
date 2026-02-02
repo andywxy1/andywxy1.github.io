@@ -3,93 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xiangyi (Andy) Wen - Data Scientist</title>
+    <title>Andy Wen - Data Scientist</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Crimson+Pro:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
     <!-- Navigation -->
     <nav class="nav-bar">
         <div class="nav-container">
-            <div class="logo">XW</div>
+            <div class="logo">
+                <span class="logo-text">AW</span>
+                <div class="logo-underline"></div>
+            </div>
             <div class="nav-links">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#about" class="nav-link" data-en="About" data-zh="关于">About</a>
+                <a href="#journey" class="nav-link" data-en="Journey" data-zh="历程">Journey</a>
+                <a href="#experience" class="nav-link" data-en="Experience" data-zh="经历">Experience</a>
+                <a href="#skills" class="nav-link" data-en="Skills" data-zh="技能">Skills</a>
+                <a href="#contact" class="nav-link" data-en="Contact" data-zh="联系">Contact</a>
+                <button class="lang-switch" id="langSwitch" aria-label="Switch Language">
+                    <span class="lang-option active" data-lang="en">EN</span>
+                    <span class="lang-divider">/</span>
+                    <span class="lang-option" data-lang="zh">中文</span>
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-background"></div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-label">Data Analytics Professional</div>
-                <h1 class="hero-title">
-                    <span class="title-line">Xiangyi</span>
-                    <span class="title-line accent">(Andy) Wen</span>
+        <div class="hero-grid">
+            <div class="hero-left">
+                <div class="hero-label" data-en="Data Scientist" data-zh="数据科学家">Data Scientist</div>
+                <h1 class="hero-name">
+                    <span class="hero-name-main">Andy Wen</span>
+                    <span class="hero-name-chinese">闻祥伊</span>
                 </h1>
-                <p class="hero-subtitle">Transforming Data into Business Insights & Impact</p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">85%</div>
-                        <div class="stat-label">Model Accuracy</div>
+                <p class="hero-mission" data-en="Transforming data into actionable insights that drive measurable business impact" data-zh="将数据转化为可操作的洞察，推动可衡量的业务影响">
+                    Transforming data into actionable insights that drive measurable business impact
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="hero-button primary">
+                        <span data-en="Get in Touch" data-zh="联系我">Get in Touch</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="#about" class="hero-button secondary">
+                        <span data-en="Learn More" data-zh="了解更多">Learn More</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-value">
+                            <span class="metric-number" data-target="85">0</span>
+                            <span class="metric-unit">%</span>
+                        </div>
+                        <div class="metric-desc" data-en="Model Accuracy" data-zh="模型准确率">Model Accuracy</div>
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <div class="stat-number">15%</div>
-                        <div class="stat-label">Churn Reduction</div>
+                    <div class="metric-item">
+                        <div class="metric-value">
+                            <span class="metric-number" data-target="15">0</span>
+                            <span class="metric-unit">%</span>
+                        </div>
+                        <div class="metric-desc" data-en="Churn Reduction" data-zh="流失率降低">Churn Reduction</div>
                     </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <div class="stat-number">200M+</div>
-                        <div class="stat-label">Users Analyzed</div>
+                    <div class="metric-item">
+                        <div class="metric-value">
+                            <span class="metric-number" data-target="200">0</span>
+                            <span class="metric-unit">M+</span>
+                        </div>
+                        <div class="metric-desc" data-en="Users Analyzed" data-zh="用户分析量">Users Analyzed</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">
+                            <span class="metric-number" data-target="10">0</span>
+                            <span class="metric-unit">TB</span>
+                        </div>
+                        <div class="metric-desc" data-en="Daily Data Processed" data-zh="每日处理数据">Daily Data Processed</div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span data-en="Scroll to explore" data-zh="向下滚动">Scroll to explore</span>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about-section">
         <div class="container">
-            <div class="section-header">
-                <div class="section-number">01</div>
-                <h2 class="section-title">Summary</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="lead-text">
-                        Data Analytics professional with experience transforming large-scale data into insights that drive business growth, product strategy, and operational excellence.
-                    </p>
-                    <p>
-                        Skilled in SQL, Python, and data visualization tools, adept at bridging technical analysis and business needs to deliver measurable impact. Proven track record in product analytics, customer segmentation, business intelligence, and strategic experimentation across marketing, retention, and growth initiatives.
-                    </p>
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="section-label">
+                        <span class="label-number">01</span>
+                        <span class="label-text" data-en="About" data-zh="关于">About</span>
+                    </div>
+                    <h2 class="section-heading" data-en="Data analytics professional bridging technical depth with business impact" data-zh="在技术深度与业务影响之间架起桥梁的数据分析专家">Data analytics professional bridging technical depth with business impact</h2>
+                    <div class="about-text">
+                        <p class="lead-paragraph" data-en="I transform large-scale data into insights that drive business growth, product strategy, and operational excellence. With experience across product analytics, customer segmentation, and strategic experimentation, I deliver measurable results in retention, growth, and marketing optimization." data-zh="我将大规模数据转化为推动业务增长、产品战略和卓越运营的洞察。凭借在产品分析、客户细分和战略实验方面的经验，我在客户留存、增长和营销优化方面实现可衡量的成果。">
+                            I transform large-scale data into insights that drive business growth, product strategy, and operational excellence. With experience across product analytics, customer segmentation, and strategic experimentation, I deliver measurable results in retention, growth, and marketing optimization.
+                        </p>
+                        <p data-en="Skilled in SQL, Python, and data visualization, I bridge the gap between technical analysis and business needs—translating complex findings into actionable strategies that influence decision-making at every level." data-zh="精通SQL、Python和数据可视化，我在技术分析和业务需求之间架起桥梁——将复杂的发现转化为可操作的策略，影响各个层面的决策制定。">
+                            Skilled in SQL, Python, and data visualization, I bridge the gap between technical analysis and business needs—translating complex findings into actionable strategies that influence decision-making at every level.
+                        </p>
+                    </div>
+
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <div class="contact-label" data-en="Location" data-zh="地点">Location</div>
+                            <div class="contact-value">Philadelphia, PA</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-label" data-en="Email" data-zh="邮箱">Email</div>
+                            <div class="contact-value">
+                                <a href="mailto:Andywen718@gmail.com">Andywen718@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-label" data-en="Phone" data-zh="电话">Phone</div>
+                            <div class="contact-value">(206) 295-8820</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-label">LinkedIn</div>
+                            <div class="contact-value">
+                                <a href="https://linkedin.com/in/xiangyi-wen" target="_blank">xiangyi-wen →</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="about-info">
-                    <div class="info-item">
-                        <div class="info-label">Location</div>
-                        <div class="info-value">Philadelphia, PA</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Email</div>
-                        <div class="info-value">
-                            <a href="mailto:Andywen718@gmail.com">Andywen718@gmail.com</a>
+
+                <div class="about-visual">
+                    <div class="stats-showcase">
+                        <div class="stat-highlight">
+                            <span class="stat-big">4</span>
+                            <span class="stat-desc">Years of Experience</span>
+                        </div>
+                        <div class="stat-highlight">
+                            <span class="stat-big">200M+</span>
+                            <span class="stat-desc">Users Impacted</span>
+                        </div>
+                        <div class="stat-highlight">
+                            <span class="stat-big">10TB</span>
+                            <span class="stat-desc">Daily Data Processed</span>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <div class="info-label">Phone</div>
-                        <div class="info-value">(206) 295-8820</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section (Personal) -->
+    <section id="journey" class="journey-section">
+        <div class="journey-bg"></div>
+        <div class="container-wide">
+            <div class="section-label centered">
+                <span class="label-number">02</span>
+                <span class="label-text" data-en="Beyond Data" data-zh="数据之外">Beyond Data</span>
+            </div>
+            <h2 class="section-heading centered" data-en="Finding balance through adventure" data-zh="在冒险中寻找平衡">Finding balance through adventure</h2>
+
+            <div class="journey-grid">
+                <div class="journey-card">
+                    <div class="journey-image-wrapper">
+                        <img src="images/paddleboard.jpg" alt="Paddleboarding adventure" class="journey-image">
+                        <div class="journey-overlay"></div>
                     </div>
-                    <div class="info-item">
-                        <div class="info-label">LinkedIn</div>
-                        <div class="info-value">
-                            <a href="https://linkedin.com/in/xiangyi-wen" target="_blank">View Profile</a>
-                        </div>
+                    <div class="journey-content">
+                        <h3 class="journey-title" data-en="On the Water" data-zh="水上运动">On the Water</h3>
+                        <p class="journey-description" data-en="From Seattle's lakes to ocean horizons—paddleboarding teaches me patience, balance, and the power of steady progress. Each stroke forward mirrors the iterative nature of data science: small adjustments lead to significant momentum." data-zh="从西雅图的湖泊到海洋的地平线——桨板运动教会了我耐心、平衡和稳步前进的力量。每一次划桨都反映了数据科学的迭代本质：小调整会带来巨大的动力。">
+                            From Seattle's lakes to ocean horizons—paddleboarding teaches me patience, balance, and the power of steady progress. Each stroke forward mirrors the iterative nature of data science: small adjustments lead to significant momentum.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="journey-card">
+                    <div class="journey-image-wrapper">
+                        <img src="images/snowboard.jpg" alt="Snowboarding adventure" class="journey-image">
+                        <div class="journey-overlay"></div>
+                    </div>
+                    <div class="journey-content">
+                        <h3 class="journey-title" data-en="On the Mountain" data-zh="山地滑雪">On the Mountain</h3>
+                        <p class="journey-description" data-en="Winter slopes demand split-second decisions and calculated risk-taking. Snowboarding sharpens my ability to read terrain, adapt to conditions, and find flow in challenging environments—skills that translate directly to navigating complex datasets." data-zh="冬季雪坡要求瞬间决策和经过计算的冒险。滑雪板运动锻炼了我解读地形、适应条件和在充满挑战的环境中找到流动感的能力——这些技能直接转化为处理复杂数据集的能力。">
+                            Winter slopes demand split-second decisions and calculated risk-taking. Snowboarding sharpens my ability to read terrain, adapt to conditions, and find flow in challenging environments—skills that translate directly to navigating complex datasets.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -99,56 +205,50 @@
     <!-- Education Section -->
     <section class="education-section">
         <div class="container">
-            <div class="section-header">
-                <div class="section-number">02</div>
-                <h2 class="section-title">Education</h2>
+            <div class="section-label">
+                <span class="label-number">03</span>
+                <span class="label-text" data-en="Education" data-zh="教育背景">Education</span>
             </div>
-            <div class="education-grid">
-                <div class="education-card">
-                    <div class="card-header">
-                        <div class="degree-info">
-                            <h3 class="degree-title">M.S.E. in Data Science</h3>
-                            <div class="school-name">University of Pennsylvania</div>
-                        </div>
-                        <div class="date-location">
-                            <div class="date">Aug 2024 - Present</div>
-                            <div class="location">Philadelphia, PA</div>
+
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="edu-year">2024 - Present</div>
+                    <div class="edu-content">
+                        <div class="edu-degree">M.S.E. in Data Science</div>
+                        <div class="edu-school">University of Pennsylvania</div>
+                        <div class="edu-location">Philadelphia, PA</div>
+                        <div class="edu-courses">
+                            <span>Machine Learning</span>
+                            <span>Big Data</span>
+                            <span>Data Mining</span>
+                            <span>Statistical Marketing Model</span>
+                            <span>Estimation Theory</span>
+                            <span>NLP</span>
                         </div>
                     </div>
-                    <div class="coursework">
-                        <div class="coursework-label">Selected Coursework:</div>
-                        <div class="course-tags">
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Big Data</span>
-                            <span class="tag">Data Mining</span>
-                            <span class="tag">Statistical Marketing Model</span>
-                            <span class="tag">Estimation Theory</span>
-                            <span class="tag">NLP</span>
-                        </div>
+                    <div class="edu-logo">
+                        <img src="images/upenn_logo.png" alt="UPenn">
                     </div>
                 </div>
-                <div class="education-card">
-                    <div class="card-header">
-                        <div class="degree-info">
-                            <h3 class="degree-title">B.S. in Statistics: Data Science</h3>
-                            <div class="school-name">University of Washington</div>
-                            <div class="honors">Dean's List and Merit Student</div>
-                        </div>
-                        <div class="date-location">
-                            <div class="date">Sep 2020 - Jun 2024</div>
-                            <div class="location">Seattle, WA</div>
+
+                <div class="education-item">
+                    <div class="edu-year">2020 - 2024</div>
+                    <div class="edu-content">
+                        <div class="edu-degree">B.S. in Statistics: Data Science</div>
+                        <div class="edu-school">University of Washington</div>
+                        <div class="edu-honors">Dean's List and Merit Student</div>
+                        <div class="edu-location">Seattle, WA</div>
+                        <div class="edu-courses">
+                            <span>Computer Programming</span>
+                            <span>Statistical Learning</span>
+                            <span>A/B Testing</span>
+                            <span>Applied Statistics</span>
+                            <span>Database Systems</span>
+                            <span>Regression</span>
                         </div>
                     </div>
-                    <div class="coursework">
-                        <div class="coursework-label">Selected Coursework:</div>
-                        <div class="course-tags">
-                            <span class="tag">Computer Programming</span>
-                            <span class="tag">Statistical Learning</span>
-                            <span class="tag">A/B Testing</span>
-                            <span class="tag">Applied Statistics</span>
-                            <span class="tag">Database System</span>
-                            <span class="tag">Regression</span>
-                        </div>
+                    <div class="edu-logo">
+                        <img src="images/uw_logo.svg" alt="UW">
                     </div>
                 </div>
             </div>
@@ -158,103 +258,93 @@
     <!-- Experience Section -->
     <section id="experience" class="experience-section">
         <div class="container">
-            <div class="section-header">
-                <div class="section-number">03</div>
-                <h2 class="section-title">Experience</h2>
+            <div class="section-label">
+                <span class="label-number">04</span>
+                <span class="label-text" data-en="Experience" data-zh="工作经历">Experience</span>
             </div>
-            <div class="timeline">
+            <h2 class="section-heading" data-en="Driving impact through data" data-zh="通过数据推动影响力">Driving impact through data</h2>
+
+            <div class="experience-list">
                 <!-- Innova AI -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="job-header">
-                            <div class="job-title-group">
-                                <h3 class="job-title">Data Scientist Intern</h3>
-                                <div class="company-name">Innova AI tech LLC</div>
-                            </div>
-                            <div class="job-meta">
-                                <div class="job-date">Jan 2025 - May 2025</div>
-                                <div class="job-location">San Francisco, Remote</div>
-                            </div>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div class="exp-title-group">
+                            <h3 class="exp-role">Data Scientist Intern</h3>
+                            <div class="exp-company">Innova AI tech LLC</div>
                         </div>
-                        <ul class="achievements">
-                            <li>Delivered end-to-end churn prediction pipeline leveraging models including Logistic Regression, Decision Trees, and Random Forest, achieving <strong>85% prediction accuracy</strong> and enabling proactive targeting of at-risk customers.</li>
-                            <li>Segmented customer base using K-Means clustering and PCA, uncovering 5 distinct customer segments to inform personalized marketing strategy development and retention initiatives.</li>
-                            <li>Partnered with marketing teams to translate predictive model results into actionable strategies, boosting email engagement by <strong>20%</strong> and improving customer acquisition efficiency.</li>
-                            <li>Built interactive dashboards in Tableau to measure and monitor retention campaign performance, reducing customer churn by <strong>15%</strong> through deployment of data-driven insights.</li>
-                            <li>Identified behavioral patterns and anomalous activity to support fraud-prevention strategies and improve overall customer experience quality.</li>
-                        </ul>
+                        <div class="exp-meta">
+                            <span class="exp-period">Jan 2025 - May 2025</span>
+                            <span class="exp-location">San Francisco, Remote</span>
+                        </div>
                     </div>
+                    <ul class="exp-achievements">
+                        <li>Delivered end-to-end churn prediction pipeline leveraging models including Logistic Regression, Decision Trees, and Random Forest, achieving <strong>85% prediction accuracy</strong> and enabling proactive targeting of at-risk customers</li>
+                        <li>Segmented customer base using K-Means clustering and PCA, uncovering 5 distinct customer segments to inform personalized marketing strategy development and retention initiatives</li>
+                        <li>Partnered with marketing teams to translate predictive model results into actionable strategies, boosting email engagement by <strong>20%</strong> and improving customer acquisition efficiency</li>
+                        <li>Built interactive dashboards in Tableau to measure and monitor retention campaign performance, reducing customer churn by <strong>15%</strong> through deployment of data-driven insights</li>
+                        <li>Identified behavioral patterns and anomalous activity to support fraud-prevention strategies and improve overall customer experience quality</li>
+                    </ul>
                 </div>
 
                 <!-- InnoSmart -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="job-header">
-                            <div class="job-title-group">
-                                <h3 class="job-title">Data Scientist Intern</h3>
-                                <div class="company-name">INNOSMART TECHNOLOGY CONSULTING CORP.</div>
-                            </div>
-                            <div class="job-meta">
-                                <div class="job-date">Jun 2024 - Aug 2024</div>
-                                <div class="job-location">Vancouver, Remote</div>
-                            </div>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div class="exp-title-group">
+                            <h3 class="exp-role">Data Scientist Intern</h3>
+                            <div class="exp-company">INNOSMART TECHNOLOGY CONSULTING CORP.</div>
                         </div>
-                        <ul class="achievements">
-                            <li>Designed and implemented advanced recommendation system combining collaborative filtering and content-based approaches using Python, lifting recommendation hit rate by <strong>15%</strong> through systematic algorithm tuning and feature engineering.</li>
-                            <li>Optimized matrix factorization and similarity algorithms, improving Precision@10 to <strong>0.35</strong> for top movie recommendations and validating statistical significance of performance improvements.</li>
-                            <li>Applied RFM modeling and unsupervised techniques such as density-based clustering to analyze viewing behavior patterns and segment users into high-value subscribers versus casual viewers.</li>
-                            <li>Presented key findings to senior stakeholders on recommendations for engagement uplift and retention strategies, influencing personalization roadmap and product development priorities.</li>
-                        </ul>
+                        <div class="exp-meta">
+                            <span class="exp-period">Jun 2024 - Aug 2024</span>
+                            <span class="exp-location">Vancouver, Remote</span>
+                        </div>
                     </div>
+                    <ul class="exp-achievements">
+                        <li>Designed and implemented advanced recommendation system combining collaborative filtering and content-based approaches using Python, lifting recommendation hit rate by <strong>15%</strong> through systematic algorithm tuning and feature engineering</li>
+                        <li>Optimized matrix factorization and similarity algorithms, improving Precision@10 to <strong>0.35</strong> for top movie recommendations and validating statistical significance of performance improvements</li>
+                        <li>Applied RFM modeling and unsupervised techniques such as density-based clustering to analyze viewing behavior patterns and segment users into high-value subscribers versus casual viewers</li>
+                        <li>Presented key findings to senior stakeholders on recommendations for engagement uplift and retention strategies, influencing personalization roadmap and product development priorities</li>
+                    </ul>
                 </div>
 
                 <!-- UW Djark Lab -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="job-header">
-                            <div class="job-title-group">
-                                <h3 class="job-title">Co-founder</h3>
-                                <div class="company-name">University of Washington, Djark Lab</div>
-                            </div>
-                            <div class="job-meta">
-                                <div class="job-date">Sep 2023 - Present</div>
-                                <div class="job-location">Seattle, WA</div>
-                            </div>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div class="exp-title-group">
+                            <h3 class="exp-role">Co-founder</h3>
+                            <div class="exp-company">University of Washington, Djark Lab</div>
                         </div>
-                        <ul class="achievements">
-                            <li>Spearheaded product development of NFC-enabled smart stickers through marketing analytics and customer journey mapping, validating scalable revenue streams.</li>
-                            <li>Optimized operations and supply chain, achieving <strong>70% profit margin</strong> and reducing production timeline from 2 weeks to 1 week.</li>
-                            <li>Established business intelligence dashboards in PowerBI to track financial and operational KPIs.</li>
-                            <li>Developed data-driven go-to-market strategy including target segments and product-market fit, improving customer acquisition efficiency and long-term retention metrics.</li>
-                            <li>Presented market research insights and growth analytics and projection to academic and entrepreneurial stakeholder, influencing funding and expansion strategies.</li>
-                        </ul>
+                        <div class="exp-meta">
+                            <span class="exp-period">Sep 2023 - Present</span>
+                            <span class="exp-location">Seattle, WA</span>
+                        </div>
                     </div>
+                    <ul class="exp-achievements">
+                        <li>Spearheaded product development of NFC-enabled smart stickers through marketing analytics and customer journey mapping, validating scalable revenue streams</li>
+                        <li>Optimized operations and supply chain, achieving <strong>70% profit margin</strong> and reducing production timeline from 2 weeks to 1 week</li>
+                        <li>Established business intelligence dashboards in PowerBI to track financial and operational KPIs</li>
+                        <li>Developed data-driven go-to-market strategy including target segments and product-market fit, improving customer acquisition efficiency and long-term retention metrics</li>
+                        <li>Presented market research insights and growth analytics and projection to academic and entrepreneurial stakeholders, influencing funding and expansion strategies</li>
+                    </ul>
                 </div>
 
                 <!-- Migu Culture -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="job-header">
-                            <div class="job-title-group">
-                                <h3 class="job-title">Data Scientist Intern</h3>
-                                <div class="company-name">Migu Culture Technology</div>
-                            </div>
-                            <div class="job-meta">
-                                <div class="job-date">Jun 2023 - Sep 2023</div>
-                                <div class="job-location">Beijing, China</div>
-                            </div>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div class="exp-title-group">
+                            <h3 class="exp-role">Data Scientist Intern</h3>
+                            <div class="exp-company">Migu Culture Technology</div>
                         </div>
-                        <ul class="achievements">
-                            <li>Analyzed streaming data from over <strong>50M users</strong> using Python with time series forecasting models (ARIMA, Prophet) and XGBoost to predict content ratings and demand trends.</li>
-                            <li>Built a scalable data pipeline processing over <strong>10TB daily</strong> user interaction data from five subsidiary platforms (music, video, digital reading, gaming, animation), implementing automated ETL workflows to reduce data processing time by <strong>60%</strong>.</li>
-                            <li>Developed executive dashboards in Tableau providing actionable insights on user behavior patterns, content performance metrics, and cross-platform synergies that supported strategic decisions affecting over <strong>200M registered users</strong>.</li>
-                            <li>Built NLP-based keyword trend and sentiment analysis system, detecting emerging topics <strong>48 hours earlier</strong> than traditional monitoring methods to inform content strategy and promotional campaigns.</li>
-                        </ul>
+                        <div class="exp-meta">
+                            <span class="exp-period">Jun 2023 - Sep 2023</span>
+                            <span class="exp-location">Beijing, China</span>
+                        </div>
                     </div>
+                    <ul class="exp-achievements">
+                        <li>Analyzed streaming data from over <strong>50M users</strong> using Python with time series forecasting models (ARIMA, Prophet) and XGBoost to predict content ratings and demand trends</li>
+                        <li>Built a scalable data pipeline processing over <strong>10TB daily</strong> user interaction data from five subsidiary platforms (music, video, digital reading, gaming, animation), implementing automated ETL workflows to reduce data processing time by <strong>60%</strong></li>
+                        <li>Developed executive dashboards in Tableau providing actionable insights on user behavior patterns, content performance metrics, and cross-platform synergies that supported strategic decisions affecting over <strong>200M registered users</strong></li>
+                        <li>Built NLP-based keyword trend and sentiment analysis system, detecting emerging topics <strong>48 hours earlier</strong> than traditional monitoring methods to inform content strategy and promotional campaigns</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -262,74 +352,81 @@
 
     <!-- Skills Section -->
     <section id="skills" class="skills-section">
+        <div class="skills-bg"></div>
         <div class="container">
-            <div class="section-header">
-                <div class="section-number">04</div>
-                <h2 class="section-title">Technical Skills</h2>
+            <div class="section-label">
+                <span class="label-number">05</span>
+                <span class="label-text" data-en="Technical Arsenal" data-zh="技术能力">Technical Arsenal</span>
             </div>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3 class="category-title">Programming & ML</h3>
-                    <div class="skill-items">
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge">Pandas</span>
-                        <span class="skill-badge">NumPy</span>
-                        <span class="skill-badge">Scikit-learn</span>
-                        <span class="skill-badge">PyTorch</span>
-                        <span class="skill-badge">TensorFlow</span>
-                        <span class="skill-badge">R</span>
-                        <span class="skill-badge">SQL</span>
-                        <span class="skill-badge">PostgreSQL</span>
-                        <span class="skill-badge">MySQL</span>
-                        <span class="skill-badge">MATLAB</span>
+            <h2 class="section-heading" data-en="Full-stack data science capabilities" data-zh="全栈数据科学能力">Full-stack data science capabilities</h2>
+
+            <div class="skills-masonry">
+                <div class="skill-group">
+                    <h3 class="skill-group-title">Programming & ML</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MATLAB</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3 class="category-title">Big Data & Cloud</h3>
-                    <div class="skill-items">
-                        <span class="skill-badge">AWS S3</span>
-                        <span class="skill-badge">SageMaker</span>
-                        <span class="skill-badge">Redshift</span>
-                        <span class="skill-badge">GCP BigQuery</span>
-                        <span class="skill-badge">Azure</span>
-                        <span class="skill-badge">Snowflake</span>
-                        <span class="skill-badge">Databricks</span>
-                        <span class="skill-badge">Spark</span>
-                        <span class="skill-badge">Hadoop</span>
-                        <span class="skill-badge">Airflow</span>
-                        <span class="skill-badge">Kubernetes</span>
+
+                <div class="skill-group">
+                    <h3 class="skill-group-title">Big Data & Cloud</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS S3</span>
+                        <span class="skill-tag">SageMaker</span>
+                        <span class="skill-tag">Redshift</span>
+                        <span class="skill-tag">GCP BigQuery</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">Snowflake</span>
+                        <span class="skill-tag">Databricks</span>
+                        <span class="skill-tag">Spark</span>
+                        <span class="skill-tag">Hadoop</span>
+                        <span class="skill-tag">Airflow</span>
+                        <span class="skill-tag">Kubernetes</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3 class="category-title">Analytics & Experimentation</h3>
-                    <div class="skill-items">
-                        <span class="skill-badge">A/B Testing</span>
-                        <span class="skill-badge">Experiment Design</span>
-                        <span class="skill-badge">Statistical Modeling</span>
-                        <span class="skill-badge">KPI Definition</span>
-                        <span class="skill-badge">Forecasting</span>
-                        <span class="skill-badge">ETL Pipelines</span>
-                        <span class="skill-badge">Data Warehousing</span>
+
+                <div class="skill-group">
+                    <h3 class="skill-group-title">Analytics & Experimentation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">A/B Testing</span>
+                        <span class="skill-tag">Experiment Design</span>
+                        <span class="skill-tag">Statistical Modeling</span>
+                        <span class="skill-tag">KPI Definition</span>
+                        <span class="skill-tag">Forecasting</span>
+                        <span class="skill-tag">ETL Pipelines</span>
+                        <span class="skill-tag">Data Warehousing</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3 class="category-title">Visualization & BI</h3>
-                    <div class="skill-items">
-                        <span class="skill-badge">Tableau</span>
-                        <span class="skill-badge">Power BI</span>
-                        <span class="skill-badge">Excel</span>
-                        <span class="skill-badge">Git</span>
+
+                <div class="skill-group">
+                    <h3 class="skill-group-title">Visualization & BI</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">Git</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3 class="category-title">Specialties</h3>
-                    <div class="skill-items">
-                        <span class="skill-badge highlight">Product Analytics</span>
-                        <span class="skill-badge highlight">Quantitative Analysis</span>
-                        <span class="skill-badge highlight">Hypothesis Testing</span>
-                        <span class="skill-badge highlight">Product KPI Tracking</span>
-                        <span class="skill-badge highlight">Business Intelligence</span>
-                        <span class="skill-badge highlight">LLM Integration</span>
+
+                <div class="skill-group highlight-group">
+                    <h3 class="skill-group-title">Core Specialties</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag accent">Product Analytics</span>
+                        <span class="skill-tag accent">Quantitative Analysis</span>
+                        <span class="skill-tag accent">Hypothesis Testing</span>
+                        <span class="skill-tag accent">Product KPI Tracking</span>
+                        <span class="skill-tag accent">Business Intelligence</span>
+                        <span class="skill-tag accent">LLM Integration</span>
                     </div>
                 </div>
             </div>
@@ -339,19 +436,28 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <div class="contact-content">
-                <h2 class="contact-title">Let's Connect</h2>
-                <p class="contact-subtitle">Open to opportunities in Data Analytics, Business Intelligence, Product Analytics, and Data Science roles.</p>
-                <div class="contact-links">
-                    <a href="mailto:Andywen718@gmail.com" class="contact-button">
-                        <span>Email Me</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="contact-wrapper">
+                <div class="contact-header">
+                    <div class="section-label">
+                        <span class="label-number">06</span>
+                        <span class="label-text" data-en="Get in Touch" data-zh="联系我">Get in Touch</span>
+                    </div>
+                    <h2 class="contact-heading" data-en="Let's build something impactful together" data-zh="让我们一起创造有影响力的成果">Let's build something impactful together</h2>
+                    <p class="contact-description" data-en="Open to opportunities in Data Analytics, Business Intelligence, Product Analytics, and Data Science roles. I'm passionate about using data to solve real-world problems and drive strategic decision-making." data-zh="对数据分析、商业智能、产品分析和数据科学职位持开放态度。我热衷于使用数据解决实际问题并推动战略决策。">
+                        Open to opportunities in Data Analytics, Business Intelligence, Product Analytics, and Data Science roles. I'm passionate about using data to solve real-world problems and drive strategic decision-making.
+                    </p>
+                </div>
+
+                <div class="contact-cta">
+                    <a href="mailto:Andywen718@gmail.com" class="cta-button primary">
+                        <span data-en="Send Email" data-zh="发送邮件">Send Email</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                     </a>
-                    <a href="https://linkedin.com/in/xiangyi-wen" target="_blank" class="contact-button secondary">
-                        <span>LinkedIn</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <a href="https://linkedin.com/in/xiangyi-wen" target="_blank" class="cta-button secondary">
+                        <span data-en="LinkedIn Profile" data-zh="LinkedIn 主页">LinkedIn Profile</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
                         </svg>
                     </a>
@@ -363,13 +469,28 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">© 2025 Xiangyi (Andy) Wen • v1.0.4</div>
-                <div class="footer-links">
-                    <a href="mailto:Andywen718@gmail.com">Email</a>
-                    <span>•</span>
-                    <a href="https://linkedin.com/in/xiangyi-wen" target="_blank">LinkedIn</a>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">AW</div>
+                    <p class="footer-tagline" data-en="Transforming data into strategic insights" data-zh="将数据转化为战略洞察">Transforming data into strategic insights</p>
                 </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <div class="footer-column-title" data-en="Connect" data-zh="联系方式">Connect</div>
+                        <a href="mailto:Andywen718@gmail.com">Email</a>
+                        <a href="https://linkedin.com/in/xiangyi-wen" target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="footer-column">
+                        <div class="footer-column-title" data-en="Location" data-zh="地点">Location</div>
+                        <span>Philadelphia, PA</span>
+                        <span>(206) 295-8820</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2025 Andy Wen</span>
+                <span>•</span>
+                <span data-en="Designed with intention" data-zh="精心设计">Designed with intention</span>
             </div>
         </div>
     </footer>
