@@ -364,15 +364,16 @@ section {
 .education-card::before {
     content: '';
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 120px;
-    height: 120px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.08;
+    background-position: right center;
+    opacity: 0.12;
     transition: var(--transition-smooth);
+    pointer-events: none;
 }
 
 .education-card:first-child::before {
@@ -390,7 +391,7 @@ section {
 }
 
 .education-card:hover::before {
-    opacity: 0.15;
+    opacity: 0.25;
 }
 
 .card-header {
