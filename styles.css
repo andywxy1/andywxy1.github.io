@@ -368,10 +368,10 @@ section {
     right: 0;
     bottom: 0;
     left: 0;
-    background-size: contain;
+    background-size: 60%;
     background-repeat: no-repeat;
-    background-position: right center;
-    opacity: 0.12;
+    background-position: center right;
+    opacity: 0.25;
     transition: var(--transition-smooth);
     pointer-events: none;
 }
@@ -391,7 +391,7 @@ section {
 }
 
 .education-card:hover::before {
-    opacity: 0.25;
+    opacity: 0.4;
 }
 
 .card-header {
@@ -401,6 +401,8 @@ section {
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--color-border);
+    position: relative;
+    z-index: 1;
 }
 
 .degree-title {
@@ -440,6 +442,11 @@ section {
 .location {
     font-size: 0.875rem;
     color: var(--color-text-light);
+}
+
+.coursework {
+    position: relative;
+    z-index: 1;
 }
 
 .coursework-label {
